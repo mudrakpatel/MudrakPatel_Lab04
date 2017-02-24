@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MudrakPatel_Lab04_Ex1
 {
-    public class Stack
+    public class Stack : Stack<Type>
     {
         private int top; // location of the top element
         private int[] elements; // array that stores stack elements
@@ -58,7 +58,7 @@ namespace MudrakPatel_Lab04_Ex1
         }
         //Peek method
         //Returns the top element of the Stack without deleting it
-        public static object Peek(Stack<Type> inputStack)
+        public static object Peek(Stack inputStack)
         {
             return inputStack.Peek();
         }
