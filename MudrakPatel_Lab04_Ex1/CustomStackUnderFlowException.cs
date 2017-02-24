@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MudrakPatel_Lab04_Ex1
 {
-    class CustomStackOverFlowException : Exception
+    class CustomStackUnderFlowException : Exception
     {
-        public CustomStackOverFlowException():base("<<<<Custom stack overflow exception caught!>>>>")
-        {
+        public CustomStackUnderFlowException() : base("<<<< Custom stack under flow exception caught! >>>>") {
             Console.WriteLine();
         }
     }

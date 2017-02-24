@@ -36,7 +36,7 @@ namespace MudrakPatel_Lab04_Ex1
             if (top == elements.Length - 1) // stack is full
             {
                 // throw new FullStackException($"Stack is full, cannot push {pushValue}");
-                throw new StackOverflowException($"Stack is full, cannot push {pushValue}");
+                throw new CustomStackOverFlowException();
             }
 
             ++top; // increment top
@@ -50,7 +50,7 @@ namespace MudrakPatel_Lab04_Ex1
             if (top == -1) // stack is empty
             {
                 //throw new EmptyStackException("Stack is empty, cannot pop");
-                throw new Exception("Stack is empty, cannot pop");
+                throw new CustomStackUnderFlowException();
             }
 
             --top; // decrement top
@@ -60,7 +60,21 @@ namespace MudrakPatel_Lab04_Ex1
         //Returns the top element of the Stack without deleting it
         public static object Peek(Stack inputStack)
         {
-            return inputStack.Peek();
+            try
+            {
+                return inputStack.Peek();
+            }
+            catch (CustomStackOverFlowException exception)
+            {
+                Console.WriteLine(exception.Message);
+                return null;
+            } catch (CustomStackUnderFlowException exception) {
+                Console.WriteLine(exception.Message);
+                return null;
+            } catch (Exception exception) {
+                Console.WriteLine(exception.Message);
+                return null;
+            }
         }
     }
 }
