@@ -58,9 +58,9 @@ namespace MudrakPatel_Lab04_Ex1
         }
         //Peek method
         //Returns the top element of the Stack without deleting it
-        public static object Peek()
+        public static object Peek(Stack<Type> inputStack)
         {
-
+            return inputStack.Peek();
         }
     }
 }
