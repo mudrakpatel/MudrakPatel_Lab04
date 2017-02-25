@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex1", "MudrakPatel_Lab04_Ex1\MudrakPatel_Lab04_Ex1.csproj", "{AB0BF035-63CD-4C98-8F9A-3D00F21C1ADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex02", "MudrakPatel_Lab04_02\MudrakPatel_Lab04_Ex02.csproj", "{8D2C26B7-78AB-4103-931E-43ED9C819105}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AB0BF035-63CD-4C98-8F9A-3D00F21C1ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB0BF035-63CD-4C98-8F9A-3D00F21C1ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB0BF035-63CD-4C98-8F9A-3D00F21C1ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
