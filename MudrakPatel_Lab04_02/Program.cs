@@ -37,6 +37,8 @@ namespace MudrakPatel_Lab04_02
             RemoveLinkedListItem(studentLinkedList, Stephen);
             //Print all students data using PrintLinkedList method
             PrintLinkedList(studentLinkedList);
+            //Search for a student using SearchLinkedListItem method
+            SearchLinkedListItem(studentLinkedList, Goku);
         }
 
         //AddLinkedListItem method
@@ -83,7 +85,28 @@ namespace MudrakPatel_Lab04_02
                 Console.WriteLine(">>>Printing student data using PrintLinkedList method....\n");
                 foreach (var student in inputLinkedList)
                 {
-                    Console.WriteLine("Name: {0,3}", student.name + " ID: " + student.id + "\n");
+                    Console.WriteLine("--- Name: {0,3}", student.name + " ID: " + student.id + "\n");
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("\n{0,2}\nException handling in process...", exception.Message);
+            }
+        }
+        //SearchLinkedListItem method
+        public static void SearchLinkedListItem(LinkedList<Student> inputLinkedList, Student studentObject)
+        {
+            try
+            {
+                Console.WriteLine("\nSearching for {0,3}...\n", studentObject.name, studentObject.id);
+                var resultedItem = from item in inputLinkedList
+                                   where ((item.name.Equals(studentObject.name)) &&
+                                   (item.id.Equals(studentObject.id)))
+                                   select item;
+                Console.WriteLine("\n>>>Students that match the search criteria :\n");
+                foreach (var item in resultedItem)
+                {
+                    Console.WriteLine("--- Name: {0,3} ID: {1,3}\n", item.name, item.id);
                 }
             }
             catch (Exception exception)
