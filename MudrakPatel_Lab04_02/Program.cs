@@ -39,6 +39,13 @@ namespace MudrakPatel_Lab04_02
             PrintLinkedList(studentLinkedList);
             //Search for a student using SearchLinkedListItem method
             SearchLinkedListItem(studentLinkedList, Goku);
+            //Clear the LinkedList using RemoveAllLinkedListItems method
+            RemoveAllLinkedListItems(studentLinkedList);
+            ////////////////////////////////////////
+            //Call the garbage collector explicitly
+            ////////////////////////////////////////
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
         }
 
         //AddLinkedListItem method
@@ -108,6 +115,18 @@ namespace MudrakPatel_Lab04_02
                 {
                     Console.WriteLine("--- Name: {0,3} ID: {1,3}\n", item.name, item.id);
                 }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("\n{0,2}\nException handling in process...", exception.Message);
+            }
+        }
+        //RemoveAllLinkedListItems method
+        public static void RemoveAllLinkedListItems(LinkedList<Student> inputLinkedList)
+        {
+            try
+            {
+                inputLinkedList.Clear();
             }
             catch (Exception exception)
             {
