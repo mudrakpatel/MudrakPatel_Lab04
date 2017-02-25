@@ -28,13 +28,15 @@ namespace MudrakPatel_Lab04_02
             Console.WriteLine("\n>>>List of initially enrolled students...\n");
             foreach (var student in studentLinkedList)
             {
-                Console.WriteLine("Name: {0,3}", student.name + " ID: " + student.id);
+                Console.WriteLine("Name: {0,3}", student.name + " ID: " + student.id + "\n");
             }
             Console.WriteLine();
             //Add a new Student object by calling AddLinkedListItem() method
             AddLinkedListItem(studentLinkedList, new Student("Lucy", 6));
             //Remove Student object by calling removeLinkedListItem() method
             RemoveLinkedListItem(studentLinkedList, Stephen);
+            //Print all students data using PrintLinkedList method
+            PrintLinkedList(studentLinkedList);
         }
 
         //AddLinkedListItem method
@@ -73,6 +75,21 @@ namespace MudrakPatel_Lab04_02
                                   + studentObject.name + " ID: " + studentObject.id + "\n");
             }
         }
-
+        //PrintLinkedList method
+        public static void PrintLinkedList(LinkedList<Student> inputLinkedList)
+        {
+            try
+            {
+                Console.WriteLine(">>>Printing student data using PrintLinkedList method....\n");
+                foreach (var student in inputLinkedList)
+                {
+                    Console.WriteLine("Name: {0,3}", student.name + " ID: " + student.id + "\n");
+                }
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("\n{0,2}\nException handling in process...", exception.Message);
+            }
+        }
     }
 }
