@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex1", "MudrakPatel_Lab04_Ex1\MudrakPatel_Lab04_Ex1.csproj", "{AB0BF035-63CD-4C98-8F9A-3D00F21C1ADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex02", "MudrakPatel_Lab04_02\MudrakPatel_Lab04_Ex02.csproj", "{8D2C26B7-78AB-4103-931E-43ED9C819105}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex2", "MudrakPatel_Lab04_02\MudrakPatel_Lab04_Ex2.csproj", "{8D2C26B7-78AB-4103-931E-43ED9C819105}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
