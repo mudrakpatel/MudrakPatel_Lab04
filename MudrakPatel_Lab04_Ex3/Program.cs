@@ -41,7 +41,7 @@ namespace MudrakPatel_Lab04_Ex3
                 AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
                 PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
                 RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
-                //SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
+                SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
                 //MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
                                                              //Garbage collection
                 GC.Collect();
@@ -120,13 +120,14 @@ namespace MudrakPatel_Lab04_Ex3
         {
             try
             {
-                var selectedEmployees = from employee in inputSortedDictionary
-                                        where (employee.Value.Equals(name))
-                                        select employee;
+                var selectedEmployees = (from employee in inputSortedDictionary
+                                        where (employee.Value.Name.Equals(name))
+                                        select new { eName = employee.Value.Name,
+                                            eSalary = employee.Value.Salary});
                 Console.WriteLine("\n>>> Employees that match search criteria:\n");
-                foreach (var employee in selectedEmployees)
+                foreach(var employee in selectedEmployees)
                 {
-                    Console.WriteLine("\n---- Name: {0,3} and Salary: {1,3}\n", employee.Value.Name, employee.Value.Salary);
+                    Console.WriteLine("\n---- Name: {0,3} and Salary: {1,3}\n", employee.eName , employee.eSalary);
                 }
             }
             catch (KeyNotFoundException exception)
