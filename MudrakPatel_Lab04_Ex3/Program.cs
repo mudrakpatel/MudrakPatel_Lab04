@@ -18,32 +18,43 @@ namespace MudrakPatel_Lab04_Ex3
             };
         static void Main(string[] args)
         {
-            //SortedDictionary<int, Employee> created
-            SortedDictionary<int, Employee> employeeSortedDictionary = 
-                new SortedDictionary<int, Employee>();
-            //Add some Employee objects to the SortedDictionary<int, Employee>
-            //Temporary variables to be used in the for loop
-            double tempSalary = 10000;
-
-            Console.WriteLine(">>> Initial list of empoyees...\n");
-            for (int index = 0; index <= employeeNames.Length; index++)
+            try
             {
-                employeeSortedDictionary.Add(index, new Employee(employeeNames[index], tempSalary * index));
-                Console.WriteLine("---Employee>>> Name: {0,3} Salary: {1,3}\n", 
-                                  employeeSortedDictionary.ElementAt(index).Value.Name, 
-                                  employeeSortedDictionary.ElementAt(index).Value.Salary);
+                //SortedDictionary<int, Employee> created
+                SortedDictionary<int, Employee> employeeSortedDictionary =
+                    new SortedDictionary<int, Employee>();
+                //Add some Employee objects to the SortedDictionary<int, Employee>
+                //Temporary variables to be used in the for loop
+                double tempSalary = 10000;
+
+                Console.WriteLine(">>> Initial list of empoyees...\n");
+                for (int index = 0; index < employeeNames.Length; index++)
+                {
+                    employeeSortedDictionary.Add(index, new Employee(employeeNames[index], tempSalary * index));
+                    Console.WriteLine("---Employee>>> Name: {0,3} Salary: {1,3}\n",
+                                      employeeSortedDictionary.ElementAt(index).Value.Name,
+                                      employeeSortedDictionary.ElementAt(index).Value.Salary);
+                }
+                /////////////////////////////////////
+                ////Testing user defined methods
+                /////////////////////////////////////
+                AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
+                //PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
+                //RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
+                //SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
+                //MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
+                                                             //Garbage collection
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
             }
-            /////////////////////////////////////
-            ////Testing user defined methods
-            /////////////////////////////////////
-            AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
-            PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
-            RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
-            SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
-            MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
-            //Garbage collection
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            catch (IndexOutOfRangeException exception)
+            {
+
+            }
+            catch ()
+            {
+
+            }
         }
         //AddDictionaryItem method
         public static void AddDictionaryItem(SortedDictionary<int, Employee> inputSortedDictionary, string name, double salary)
@@ -98,8 +109,8 @@ namespace MudrakPatel_Lab04_Ex3
             try
             {
                 var selectedEmployees = from employee in inputSortedDictionary
-                                       where (employee.Value.Equals(name))
-                                       select employee;
+                                        where (employee.Value.Equals(name))
+                                        select employee;
                 Console.WriteLine("\n>>> Employees that match search criteria:\n");
                 foreach (var employee in selectedEmployees)
                 {
@@ -112,7 +123,7 @@ namespace MudrakPatel_Lab04_Ex3
             }
         }
         //MaxDictionaryItem method
-        public static void MaxDictionaryItem(SortedDictionary<int,Employee> inputSortedDictionary)
+        public static void MaxDictionaryItem(SortedDictionary<int, Employee> inputSortedDictionary)
         {
             try
             {
