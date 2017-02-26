@@ -40,7 +40,7 @@ namespace MudrakPatel_Lab04_Ex3
                 /////////////////////////////////////
                 AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
                 PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
-                //RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
+                RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
                 //SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
                 //MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
                                                              //Garbage collection
@@ -77,10 +77,22 @@ namespace MudrakPatel_Lab04_Ex3
         {
             try
             {
+                int index = new Random().Next(0, inputSortdeDictionary.Count);
+
                 Console.WriteLine("\n>>> Removing an employee to the sorted dictionary...\n");
-                var removedEmployee = inputSortdeDictionary.Remove(0);
-                Console.WriteLine("\n>>> Removed employee: {0,3}\n", removedEmployee.ToString());
-                employeeNames.ToList().RemoveAt(0);
+                var removedEmployee = inputSortdeDictionary.ElementAt(index);
+                inputSortdeDictionary.Remove(removedEmployee.Key);
+                Console.WriteLine("\n>>> Removed employee: {0,3}\n--- Name: {} Salary: {1,3}",
+                                  removedEmployee.Value.Name, removedEmployee.Value.Salary);
+                employeeNames.ToList().RemoveAt(index);
+            }
+            catch (FormatException exception)
+            {
+                Console.WriteLine("\n>>>{0,2}\n  Exception handling in process...\n", exception.Message);
+            }
+            catch (KeyNotFoundException exception)
+            {
+                Console.WriteLine("\n>>>{0,2}\n  Exception handling in process...\n", exception.Message);
             }
             catch (Exception exception)
             {
