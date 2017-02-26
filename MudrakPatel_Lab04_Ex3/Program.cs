@@ -39,7 +39,7 @@ namespace MudrakPatel_Lab04_Ex3
                 ////Testing user defined methods
                 /////////////////////////////////////
                 AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
-                //PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
+                PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
                 //RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
                 //SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
                 //MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
@@ -49,11 +49,11 @@ namespace MudrakPatel_Lab04_Ex3
             }
             catch (IndexOutOfRangeException exception)
             {
-
+                Console.WriteLine("\n>>>{0,2}\n  Exception handling in process...\n", exception.Message);
             }
-            catch ()
+            catch (Exception exception)
             {
-
+                Console.WriteLine("\n>>>{0,2}\n  Exception handling in process...\n", exception.Message);
             }
         }
         //AddDictionaryItem method
