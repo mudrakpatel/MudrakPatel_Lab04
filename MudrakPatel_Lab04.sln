@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex1", "Mu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex2", "MudrakPatel_Lab04_02\MudrakPatel_Lab04_Ex2.csproj", "{8D2C26B7-78AB-4103-931E-43ED9C819105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudrakPatel_Lab04_Ex3", "MudrakPatel_Lab04_Ex3\MudrakPatel_Lab04_Ex3.csproj", "{4E21BEA6-0B9E-4935-9003-2558CE1DD386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D2C26B7-78AB-4103-931E-43ED9C819105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E21BEA6-0B9E-4935-9003-2558CE1DD386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E21BEA6-0B9E-4935-9003-2558CE1DD386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E21BEA6-0B9E-4935-9003-2558CE1DD386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E21BEA6-0B9E-4935-9003-2558CE1DD386}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
