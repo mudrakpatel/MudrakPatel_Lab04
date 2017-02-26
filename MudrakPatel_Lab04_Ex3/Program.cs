@@ -81,10 +81,10 @@ namespace MudrakPatel_Lab04_Ex3
 
                 Console.WriteLine("\n>>> Removing an employee to the sorted dictionary...\n");
                 var removedEmployee = inputSortdeDictionary.ElementAt(index);
-                inputSortdeDictionary.Remove(removedEmployee.Key);
-                Console.WriteLine("\n>>> Removed employee: {0,3}\n--- Name: {} Salary: {1,3}",
-                                  removedEmployee.Value.Name, removedEmployee.Value.Salary);
                 employeeNames.ToList().RemoveAt(index);
+                inputSortdeDictionary.Remove(removedEmployee.Key);
+                Console.WriteLine("\n>>> Removed employee:\n--- Name: {0,3} Salary: {1,3}",
+                                  removedEmployee.Value.Name, removedEmployee.Value.Salary);
             }
             catch (FormatException exception)
             {
@@ -128,6 +128,11 @@ namespace MudrakPatel_Lab04_Ex3
                 {
                     Console.WriteLine("\n---- Name: {0,3} and Salary: {1,3}\n", employee.Value.Name, employee.Value.Salary);
                 }
+            }
+            catch (KeyNotFoundException exception)
+            {
+                Console.WriteLine("\n>>>{0,2}\n--- May be the employee has been deleted due to previous method call"
+                                    +"\n  Exception handling in process...\n", exception.Message);
             }
             catch (Exception exception)
             {
