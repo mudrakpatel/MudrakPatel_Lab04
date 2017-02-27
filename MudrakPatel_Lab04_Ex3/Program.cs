@@ -40,10 +40,10 @@ namespace MudrakPatel_Lab04_Ex3
                 /////////////////////////////////////
                 AddDictionaryItem(employeeSortedDictionary, "Gray", 500000); //Add an employee
                 PrintDictionary(employeeSortedDictionary); //Print all employees after adding an employee
-                RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
-                SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
-                //MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
-                                                             //Garbage collection
+                //RemoveDictionaryItem(employeeSortedDictionary); //Remove a dictionary item at index 0
+                //SearchDictionaryItem(employeeSortedDictionary, "Clint"); //Search for an employee
+                MaxDictionaryItem(employeeSortedDictionary); //Search for an employee with highest salary
+                //Garbage collection
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
             }
@@ -145,19 +145,26 @@ namespace MudrakPatel_Lab04_Ex3
         {
             try
             {
-                //Query to find max salary from all employees salaries
-                var maxSalary = inputSortedDictionary.Values.Max().Salary;
-                //Query to find the name of the employee whose 
-                //salary is the salary returnded from above query
-                var nameOfMaxSalaryEmployee = from employee in inputSortedDictionary.Values
-                                              where (employee.Salary.Equals(maxSalary))
-                                              select employee.Name;
-                Console.WriteLine("\n>>> Employee(s) with highest salary:\n--- Name: {0,3} Salary: {1,3}",
-                                    nameOfMaxSalaryEmployee, maxSalary);
+                var maxSalary = 0.0;
+                var employeeName = "";
+                int index = 0;
+                foreach (var employee in inputSortedDictionary.ToArray())
+                {
+                    if (index > -1 || index < inputSortedDictionary.ToArray().Length)
+                    {
+                        if ((employee.Value.Salary > inputSortedDictionary[index++].Salary))
+                        {
+                            maxSalary = inputSortedDictionary[index].Salary;
+                            employeeName = inputSortedDictionary[index].Name;
+                        } 
+                    }
+                }
+                Console.WriteLine("\n>>> Employee(s) with highest salary:\n--- Name: {0,3} Salary: {1,3}", employeeName, maxSalary);
             }
             catch (Exception exception)
             {
                 Console.WriteLine("\n>>>{0,2}\n  Exception handling in process...\n", exception.Message);
+                //Console.WriteLine("\nLocation: {0,2}\n", exception.StackTrace);
             }
         }
     }

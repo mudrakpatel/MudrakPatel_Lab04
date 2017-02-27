@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MudrakPatel_Lab04_Ex3
 {
-    class Employee
+    class Employee : IComparable
     {
         public string Name { get; set; }
         public double salary;
@@ -35,6 +35,11 @@ namespace MudrakPatel_Lab04_Ex3
         public override string ToString()
         {
             return String.Format("\nName: {0}, Salary:{1}", Name, Salary);
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
